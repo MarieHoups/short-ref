@@ -1,0 +1,139 @@
+:root {
+  --color-main-light: #e1bee7;
+  --color-main-dark: purple;
+}
+
+.main-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.input-search {
+  display: block;
+  height: 3em;
+  width: 20em;
+  margin: 3em 50% 5em;
+  text-transform: uppercase;
+}
+
+.input-search,
+.input-shortcut {
+  border: none;
+  border-bottom: solid 3px #ccc;
+  text-align: center;
+}
+
+.input-shortcut {
+  border-bottom: solid 2px #ccc;
+  padding: .5em;
+}
+
+.input-search:focus,
+.input-shortcut:focus {
+  outline: 0;
+  border-bottom-color: var(--color-main-light);
+}
+
+::-webkit-input-placeholder {
+  color: #bbb;
+  text-transform: uppercase;
+  ;
+}
+
+table {
+  border-collapse: collapse;
+  margin-left: 10%;
+}
+
+th {
+  min-width: 200px;
+  text-align: left;
+  background: #fff;
+  font-weight: 600;
+}
+
+tr {
+  border-bottom-color: var(--color-main-light);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+tr:nth-child(odd) {
+  background: #ececec;
+}
+
+th, td {
+  color: darkbrown;
+  padding: 1em;
+}
+
+.cell-key {
+  font-family: monospace;
+  color: #000;
+}
+
+.cell-desc {
+  font-family: 'helvetica neue';
+  font-size: .8em;
+  color: #444;
+  min-width: 200px;
+}
+
+.section-tags {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.label-tags {
+  font-family: monospace;
+  color: var(--color-main-light);
+  padding: 0.8em 1em;
+}
+
+.label-tags span:before {
+  content: '+';
+  display: inline-block;
+  color: #ccc;
+  margin-right: 0.2em;
+}
+
+.label-tags input[type=checkbox]:checked + span {
+  color: var(--color-main-dark);
+}
+
+.label-tags input[type=checkbox]:checked + span:before {
+  content: 'x';
+  color: var(--color-main-light);
+}
+
+input[type=checkbox] {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+.form-shortcut {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
+  margin-bottom: 1em;
+  margin-top: 2em;
+}
+
+.form-shortcut button {
+  background: #fff;
+  border: solid var(--color-main-light) 1px;
+  color: var(--color-main-light);
+  width: 10em;
+  padding: 0.8em;
+  margin: 1em auto;
+}
+
+.form-shortcut button:hover,
+.label-tags:hover input[type=checkbox] + span:before,
+.label-tags:hover input[type=checkbox]:checked + span:before {
+  color: var(--color-main-dark);
+}
+
+
+
