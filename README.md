@@ -1,4 +1,6 @@
-# Shortcuts - quick reference
+### Keyboard shortcuts + commands -- Quick reference
+
+I wish I could banish my trackpad
 
 ![App screenshot](https://raw.githubusercontent.com/MarieHoups/short-ref/master/public/short-ref-screenshot.png)
 
