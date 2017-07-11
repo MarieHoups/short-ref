@@ -1,5 +1,5 @@
 module.exports = {
-  tags: ['Chrome', 'OS X', 'Sketch', 'Sublime Text', 'Vim', 'VLC', 'YouTube'],
+  tags: [['Chrome', '#4285f4'], ['OS X', "#888"], ['Sketch', "#ffc107"], ['Sublime Text', "#b17965"], ['Vim', "#95dc39"], ['VLC', "#ee740e"], ['YouTube' , 'crimson']],
   shortcuts: [
   {
     key: "^ + T",

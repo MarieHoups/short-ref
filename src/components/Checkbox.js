@@ -13,21 +13,24 @@ class Checkbox extends Component {
   _handleSelect() {
     const { isChecked } = {...this.state};
     this.setState(prevState => ({isChecked: !prevState.isChecked}));
-    this.props.selectTag(this.props.tagName);
+    this.props.selectTag(this.props.tag);
     this.props.filterTable(this.props.textInput);
   }
 
   render() {
-    const { tagName } = this.props;
+    const { tag, color } = this.props;
     return (
-      <label className="label-tags">
+      <div>
         <input type="checkbox"
-          value={tagName}
+          value={tag}
+          id={tag[0]}
           onChange={this._handleSelect}
           checked={this.state.isChecked}
         />
-        <span>{tagName}</span>
-      </label>
+        <label htmlFor={tag[0]} className="label-tags" style={{color: tag[1]}}>
+          <span className="label-tags-text">{tag[0]}</span>
+        </label>
+      </div>
     )
   }
 }

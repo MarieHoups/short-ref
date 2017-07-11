@@ -20,8 +20,7 @@ class App extends Component {
 
   componentWillMount() {
     this.data = mock;
-    this.selectedTags = new Set();
-    for (let tag of this.data.tags) this.selectedTags.add(tag)
+    this.selectedTags = new Map(this.data.tags);
   }
 
   _filterTable(text) {
@@ -29,9 +28,9 @@ class App extends Component {
   }
 
   _selectTag = (tag) => {
-    this.selectedTags.has(tag)
-    ? this.selectedTags.delete(tag)
-    : this.selectedTags.add(tag)
+    this.selectedTags.has(tag[0])
+    ? this.selectedTags.delete(tag[0])
+    : this.selectedTags.set(...tag)
   }
 
   _addShortcut(shortcut) {
@@ -52,13 +51,14 @@ class App extends Component {
               .map(t =>
                 <Checkbox
                   key={t}
-                  tagName={t}
+                  tag={t}
                   textInput={text}
                   selectTag={this._selectTag}
                   filterTable={this._filterTable}
                 />
               )
-            }
+
+          }
             </section>
           </div>
           <Table

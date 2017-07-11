@@ -1,6 +1,7 @@
 :root {
   --color-main-light: #e1bee7;
   --color-main-dark: purple;
+  --color-disabled: #ccc;
 }
 
 .main-grid {
@@ -19,12 +20,12 @@
 .input-search,
 .input-shortcut {
   border: none;
-  border-bottom: solid 3px #ccc;
+  border-bottom: solid 3px var(--color-disabled);
   text-align: center;
 }
 
 .input-shortcut {
-  border-bottom: solid 2px #ccc;
+  border-bottom: solid 2px var(--color-disabled);
   padding: .5em;
 }
 
@@ -63,7 +64,6 @@ tr:nth-child(odd) {
 }
 
 th, td {
-  color: darkbrown;
   padding: 1em;
 }
 
@@ -75,8 +75,21 @@ th, td {
 .cell-desc {
   font-family: 'helvetica neue';
   font-size: .8em;
-  color: #444;
   min-width: 200px;
+}
+
+.cell-desc::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  background: currentColor;
+  border-radius: 50%;
+  margin-right: 1.5em;
+}
+
+.cell-desc-text {
+  color: #4a3226;
 }
 
 .section-tags {
@@ -87,24 +100,14 @@ th, td {
 
 .label-tags {
   font-family: monospace;
-  color: var(--color-main-light);
-  padding: 0.8em 1em;
-}
-
-.label-tags span:before {
-  content: '+';
   display: inline-block;
-  color: #ccc;
-  margin-right: 0.2em;
+  margin: 0.8em 1em;
 }
 
-.label-tags input[type=checkbox]:checked + span {
-  color: var(--color-main-dark);
-}
-
-.label-tags input[type=checkbox]:checked + span:before {
-  content: 'x';
-  color: var(--color-main-light);
+.label-tags::before {
+  content: '+';
+  color: var(--color-main-light);;
+  margin-right: .3em;
 }
 
 input[type=checkbox] {
@@ -129,11 +132,20 @@ input[type=checkbox] {
   margin: 1em auto;
 }
 
+input[type=checkbox]:checked + .label-tags::before {
+  content: 'x';
+  color: currentColor;
+}
+
 .form-shortcut button:hover,
-.label-tags:hover input[type=checkbox] + span:before,
-.label-tags:hover input[type=checkbox]:checked + span:before {
+.label-tags:hover::before,
+input[type=checkbox] + .label-tags:hover span,
+input[type=checkbox]:checked + .label-tags span {
   color: var(--color-main-dark);
 }
 
-
-
+input[type=checkbox] + .label-tags span,
+input[type=checkbox]:checked + .label-tags span:hover,
+input[type=checkbox]:checked + .label-tags:hover::before {
+  color: var(--color-disabled);
+}
