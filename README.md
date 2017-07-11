@@ -1,4 +1,4 @@
-### Keyboard shortcuts + commands -- Quick reference
+### ![App icon](https://raw.githubusercontent.com/MarieHoups/short-ref/master/public/sr_icon_32x32.png) Keyboard shortcuts + commands -- Quick reference
 
 I wish I could banish my trackpad
 
